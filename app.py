@@ -21,5 +21,5 @@ def predict():
     return jsonify(sorted_probability)
 
 if __name__ == "__main__":
-    model = pickle.load(open("models/diseases.pkl", "rb"))
+    model = pickle.load(open("models/model-v2.pkl", "rb"))
     app.run(port=port, debug = True)
