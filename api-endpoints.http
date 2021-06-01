@@ -2,5 +2,9 @@ POST http://localhost:8080/predict HTTP/1.1
 Content-Type: application/json
 
 {
-    "symtomps": [0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    "symtomps": {
+        "sakit_leher": 1,
+        "sakit_lutut": 0,
+        "tidak_tahu": 1
+    }
 }

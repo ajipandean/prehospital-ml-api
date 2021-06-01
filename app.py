@@ -9,6 +9,7 @@ port = 8080
 @app.route("/predict", methods=["POST"])
 def predict():
     req = request.get_json()["symtomps"]
+    req = [i[1] for i in req.items()]
     classes = model.classes_
     prediction = model.predict_proba([req])[0]
 
