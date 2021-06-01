@@ -12,7 +12,6 @@ def predict():
     classes = model.classes_
     prediction = model.predict_proba([req])[0]
 
-    # Merge 2 arrays into dictionary
     probability = [{
         "label": label,
         "value": value,
@@ -22,5 +21,5 @@ def predict():
     return jsonify(sorted_probability)
 
 if __name__ == "__main__":
-    model = pickle.load(open("models/model-v2.pkl", "rb"))
+    model = pickle.load(open("models/model-v3.pkl", "rb"))
     app.run(port=port, debug = True)
