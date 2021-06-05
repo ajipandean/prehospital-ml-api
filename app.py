@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
-from operator import itemgetter
 import pickle
-import json
+import urllib
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -23,5 +22,7 @@ def predict():
     return jsonify(sorted_probability)
 
 if __name__ == "__main__":
-    model = pickle.load(open("models/model-v3.pkl", "rb"))
+    url = "https://storage.googleapis.com/g-one-bucket/ml-models/model-v3.pkl"
+    file = urllib.request.urlopen(url)
+    model = pickle.load(file)
     app.run(host="0.0.0.0", port=port, debug = True)
