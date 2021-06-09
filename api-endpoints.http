@@ -4,3 +4,12 @@ Content-Type: application/json
 {
     "symtomps": ""
 }
+
+###
+
+POST https://mlapi-uhq6phyosa-et.a.run.app/predict HTTP/1.1
+Content-Type: application/json
+
+{
+    "symtomps": ""
+}
